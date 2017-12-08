@@ -315,6 +315,24 @@ class TgCommands extends AbstractWrapperCommands
     {
         return $this->exec('user_info ' . $this->escapePeer($user));
     }
+    
+    
+    /**
+     * Executes the view_user_photo-command.
+     * Will get better formated in the future.
+     *
+     * @param string $user The user, gets escaped with escapePeer(),
+     *                     so you can directly use the values from getContactList()
+     *
+     * @return string|boolean The answer of the user_info-command; false if somethings goes wrong
+     *
+     * @uses exec()
+     * @uses escapePeer()
+     */
+    public function getUserPhoto($user)
+    {
+        return $this->exec('view_user_photo ' . $this->escapePeer($user));
+    }
 
     /**
      * Marks all messages with $peer as read.
