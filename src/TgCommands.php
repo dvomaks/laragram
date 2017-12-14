@@ -905,4 +905,8 @@ class TgCommands extends AbstractWrapperCommands
     {
         return $this->exec('channel_invite ' . $this->escapePeer($name) . ' ' . $this->escapePeer($user));
     }
+    public function channelList()
+    {
+        return $this->exec('channel_list');
+    }
 }
