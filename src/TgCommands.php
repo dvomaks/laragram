@@ -895,4 +895,14 @@ class TgCommands extends AbstractWrapperCommands
 
         return implode(' ', $peers);
     }
+    
+    // new no tested
+    public function channelInfo($name)
+    {
+        return $this->exec('channel_info ' . $this->escapePeer($name));
+    }
+    public function channelInvite($name, $user)
+    {
+        return $this->exec('channel_invite ' . $this->escapePeer($name) . ' ' . $this->escapePeer($user));
+    }
 }
